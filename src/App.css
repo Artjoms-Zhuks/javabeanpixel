@@ -1,0 +1,87 @@
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #080b1a;
+    --purple: #6c2bd9;
+    --purple-light: #9b59f5;
+    --pink: #e040fb;
+    --cyan: #00e5ff;
+    --white: #ffffff;
+    --gray: #a0aec0;
+    --card-bg: rgba(255,255,255,0.05);
+    --card-border: rgba(255,255,255,0.1);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Rajdhani', sans-serif; background: var(--bg); color: var(--white); overflow-x: hidden; }
+ 
+  .bg-canvas {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 30%, rgba(108,43,217,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 70%, rgba(224,64,251,0.1) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 40% at 60% 10%, rgba(0,229,255,0.08) 0%, transparent 50%),
+      var(--bg);
+  }
+  .grid-overlay {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image: linear-gradient(rgba(108,43,217,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(108,43,217,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .neon-bars { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .neon-bar { position: absolute; height: 2px; border-radius: 2px; }
+  .neon-bar:nth-child(1) { width: 120px; background: var(--cyan);         top: 20%; left: -140px; animation: floatR 7s 0s   linear infinite; }
+  .neon-bar:nth-child(2) { width: 80px;  background: var(--pink);         top: 45%; left: -100px; animation: floatR 9s 1.5s linear infinite; }
+  .neon-bar:nth-child(3) { width: 160px; background: var(--purple-light); top: 70%; left: -180px; animation: floatR 6s 3s   linear infinite; }
+  .neon-bar:nth-child(4) { width: 90px;  background: var(--cyan);         top: 85%; right:-110px; animation: floatL 8s 0.5s linear infinite; }
+  .neon-bar:nth-child(5) { width: 140px; background: var(--pink);         top: 15%; right:-160px; animation: floatL 10s 2s  linear infinite; }
+  .neon-bar:nth-child(6) { width: 100px; background: var(--purple-light); top: 60%; right:-120px; animation: floatL 7s 4s   linear infinite; }
+  @keyframes floatR { 0%{transform:translateX(0);opacity:0} 10%{opacity:.7} 90%{opacity:.4} 100%{transform:translateX(calc(100vw + 300px));opacity:0} }
+  @keyframes floatL { 0%{transform:translateX(0);opacity:0} 10%{opacity:.7} 90%{opacity:.4} 100%{transform:translateX(calc(-100vw - 300px));opacity:0} }
+ 
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 1; }
+  section { position: relative; z-index: 1; }
+ 
+  /* NAV */
+
+ 
+  /* HERO */
+
+ 
+  /* SECTION TITLE */
+  .section-title {
+    font-family:'Orbitron',sans-serif; font-size:clamp(16px,2.5vw,24px); font-weight:700; letter-spacing:3px;
+    margin-bottom:50px; text-align:center; display:block;
+    position:relative;
+  }
+  .section-title::after { content:''; display:block; margin:10px auto 0; width:60px; height:2px; background:linear-gradient(90deg,var(--purple),var(--pink)); border-radius:2px; }
+ 
+  /* SERVICES */
+
+ 
+  /* PORTFOLIO */
+
+ 
+  /* FAQ */
+
+  /* CONTACT */
+
+ 
+  /* FOOTER */
+  footer { border-top:1px solid var(--card-border); padding:28px 40px; text-align:center; font-size:12px; color:rgba(160,174,192,0.4); font-family:'Orbitron',sans-serif; letter-spacing:2px; position:relative; z-index:1; }
+  footer span { color:var(--purple-light); }
+ 
+  /* REVEAL */
+  .reveal { opacity:0; transform:translateY(40px); transition:opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+  .reveal-delay-1 { transition-delay:.1s; } .reveal-delay-2 { transition-delay:.2s; } .reveal-delay-3 { transition-delay:.3s; }
+ 
+  @media(max-width:768px){
+    .services-grid,.portfolio-grid{grid-template-columns:1fr;}
+    .nav-inner{gap:16px;flex-wrap:wrap;}
+    .ui-badge{display:none;}
+    .contact-wrap{padding:30px 24px;}
+  }
+  @media(max-width:480px){
+    .container{padding:0 20px;}
+    .hero-btns{flex-direction:column;align-items:center;}
+    .btn{width:100%;text-align:center;}
+  }
