@@ -1,16 +1,51 @@
-# React + Vite
+# The Java Bean / Pixel — Official Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern studio website built with React + Vite.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 18
+- Vite
+- EmailJS (contact form)
+- CSS Variables
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Install dependencies
 
-## Expanding the ESLint configuration
+npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Run locally
+
+npm run dev
+
+# Build for production
+
+npm run build
+
+## Project Structure
+
+src/
+components/
+Navbar.jsx
+Hero.jsx
+About.jsx
+Services.jsx
+Portfolio.jsx
+FaqContent.jsx
+Contact.jsx
+App.jsx
+App.css
+contents/
+content.js
+public/
+logo.png
+portfolio/
+
+## Environment Variables
+
+Create a `.env` file in the root:
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID1=your_template_id1
+VITE_EMAILJS_TEMPLATE_ID2=your_template_id2
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
